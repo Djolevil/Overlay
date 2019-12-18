@@ -18,7 +18,7 @@ async function sh(cmd) {
 }
 
 async function main() {
-  let { stdout } = await sh('touch testFile.txt');
+  let { stdout } = await sh('magick originalPicture.jpg -resize x1080 resize-originalPicture.jpg \n magick resize-originalPicture.jpg -gravity center -crop 1080x1080+0+0 +repage square-originalPicture.jpg \n magick square-originalPicture.jpg -gravity center overlay.jpg -composite final.jpg');
 }
 
 main();
